@@ -1,27 +1,32 @@
-package com.ironhack.labjavajparelationshipsandinheritancees.model.PublicRelations;
+package com.ironhack.labjavajparelationshipsandinheritancees.model.TaskManagement;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Contact {
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
-    private String company;
-
     private String title;
 
-    @Embedded
-    private Name name;
+    @NotNull
+    private LocalDate dueDate;
+
+    @NotNull
+    private boolean completed;
 }

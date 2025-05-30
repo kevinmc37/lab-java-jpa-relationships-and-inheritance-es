@@ -1,6 +1,7 @@
-package com.ironhack.labjavajparelationshipsandinheritancees.model.Nursing;
+package com.ironhack.labjavajparelationshipsandinheritancees.model.Association;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +19,9 @@ public class Association {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
+    private String name;
+
     @OneToMany(mappedBy = "association", fetch = FetchType.EAGER)
     private List<Division> divisions;
-
-    private String name;
 }

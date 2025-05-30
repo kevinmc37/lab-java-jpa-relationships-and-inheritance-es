@@ -1,7 +1,9 @@
-package com.ironhack.labjavajparelationshipsandinheritancees.model.Nursing;
+package com.ironhack.labjavajparelationshipsandinheritancees.model.Association;
 
 import com.ironhack.labjavajparelationshipsandinheritancees.enums.memberStatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,12 +22,16 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
+    private String name;
+
+    @NotNull
     @Enumerated(EnumType.STRING)
     private memberStatus status;
 
+    @NotNull
+    private LocalDate renewalDate;
+
     @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY)
     private List<Division> divisions;
-
-    private String name;
-    private LocalDate renewalDate;
 }
