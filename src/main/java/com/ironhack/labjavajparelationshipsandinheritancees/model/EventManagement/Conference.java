@@ -1,6 +1,8 @@
 package com.ironhack.labjavajparelationshipsandinheritancees.model.EventManagement;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.ironhack.labjavajparelationshipsandinheritancees;
+package com.ironhack.labjavajparelationshipsandinheritancees.demo;
 
 import com.ironhack.labjavajparelationshipsandinheritancees.enums.memberStatus;
 import com.ironhack.labjavajparelationshipsandinheritancees.model.Association.Association;
